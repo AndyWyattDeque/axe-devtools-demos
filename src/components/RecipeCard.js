@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from '@deque/cauldron-react'
 import pencil from '../img/icons/pencil.png'
 import './RecipeCard.css'
 
@@ -11,33 +10,42 @@ const RecipeCard = ({ recipe, setCurrentEditModal, setCurrentViewModal }) => (
         onClick={() => {
           setCurrentEditModal(recipe.name)
         }}
+        className="Recipes__card-edit"
         tabIndex={0}
       >
         <img src={pencil} className="edit" alt="Edit" />
       </div>
+      <div className="Heading">{recipe.name}</div>
       <img src={recipe.image} className="Recipe__image" alt="" />
     </div>
     <div className="Recipes__card-content">
-      <div className="Heading">{recipe.name}</div>
       <table>
         <tbody>
           <tr>
-            <th scope="row">Prep time</th>
+            <td className="theader">Prep time</td>
             <td>{recipe.prepTime}</td>
           </tr>
           <tr>
-            <th scope="row">Cook time</th>
+            <td className="theader">Cook time</td>
             <td>{recipe.cookTime}</td>
           </tr>
           <tr>
-            <th scope="row">Difficulty</th>
+            <td className="theader">Difficulty</td>
             <td className={recipe.difficulty}>{recipe.difficulty}</td>
+          </tr>
+          <tr>
+            <td className="theader">Yumminess</td>
+            <td>{recipe.yumminess}</td>
+          </tr>
+          <tr>
+            <td className="theader">Grease Fires</td>
+            <td>{recipe.greaseFireCount}</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div className="Recipes__card-foot">
-      <Button onClick={() => setCurrentViewModal(recipe.name)}>
+    <div className="Recipes__card-foot" role="alert">
+      <div className="Button--primary" onClick={() => setCurrentViewModal(recipe.name)}>
         <span className="BracketLeft" aria-hidden="true">
           [
         </span>
@@ -45,7 +53,7 @@ const RecipeCard = ({ recipe, setCurrentEditModal, setCurrentViewModal }) => (
         <span className="BracketRight" aria-hidden="true">
           ]
         </span>
-      </Button>
+      </div>
     </div>
   </div>
 )
