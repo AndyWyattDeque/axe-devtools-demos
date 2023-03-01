@@ -33,14 +33,6 @@ const RecipeCard = ({ recipe, setCurrentEditModal, setCurrentViewModal }) => (
             <td className="theader">Difficulty</td>
             <td className={recipe.difficulty}>{recipe.difficulty}</td>
           </tr>
-          <tr>
-            <td className="theader">Yumminess</td>
-            <td>{recipe.yumminess}</td>
-          </tr>
-          <tr>
-            <td className="theader">Grease Fires</td>
-            <td>{recipe.greaseFireCount}</td>
-          </tr>
         </tbody>
       </table>
     </div>

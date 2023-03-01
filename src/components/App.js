@@ -10,6 +10,11 @@ import {
   Icon,
   Button,
   RadioGroup,
+  Table, 
+  TableBody,
+  TableCell,
+  TableRow,
+  TableHead
 } from '@deque/cauldron-react'
 import Modal, { ModalContent, ModalFooter } from './Modal'
 import logo from '../img/icons/logo.svg'
@@ -71,6 +76,37 @@ const App = ({
               currentViewModal={currentViewModal}
             />
           ))}
+        </div>
+        <div className="RecipesTable">
+          <h2>Full Recipe Breakdown</h2>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell className="THead">Name</TableCell>
+                <TableCell className="THead">Cook Count</TableCell>
+                <TableCell className="THead">Prep Time</TableCell>
+                <TableCell className="THead">Cook Time</TableCell>
+                <TableCell className="THead">Difficulty</TableCell>
+                <TableCell className="THead">Grease Fire Count</TableCell>
+                <TableCell className="THead">Yumminess</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {recipes.map(({
+                name, cookCount, prepTime, cookTime, difficulty, greaseFireCount, yumminess
+              }) => (
+                <TableRow key={name}>
+                  <TableCell>{name}</TableCell>
+                  <TableCell>{cookCount}</TableCell>
+                  <TableCell>{prepTime}</TableCell>
+                  <TableCell>{cookTime}</TableCell>
+                  <TableCell>{difficulty}</TableCell>
+                  <TableCell>{greaseFireCount}</TableCell>
+                  <TableCell>{yumminess}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
         {themeModalActive && (
           <Modal show onClose={onThemeModalClose} heading="Set Theme">

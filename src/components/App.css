@@ -85,3 +85,22 @@ h1 span {
   justify-content: center;
   margin-left: auto;
 }
+
+.RecipesTable {
+  margin: 3em auto;
+}
+
+.RecipesTable .Table {
+  box-shadow: 0 0 6px;
+}
+
+.RecipesTable .THead {
+  background: #f2f2f2;
+  font-weight: bold;
+  border-bottom: 3px solid #ccc !important;
+  padding: 1.1em 8px;
+}
+
+.cauldron--theme-dark .RecipesTable .THead {
+  color: var(--table-cell-background-color);
+}
