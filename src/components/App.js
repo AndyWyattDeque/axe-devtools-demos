@@ -1,13 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  SkipLink,
   Layout,
   Main,
-  TopBar,
-  MenuBar,
-  TopBarItem,
-  Icon,
   Button,
   RadioGroup,
   Table, 
@@ -17,7 +12,6 @@ import {
   TableHead
 } from '@deque/cauldron-react'
 import Modal, { ModalContent, ModalFooter } from './Modal'
-import logo from '../img/icons/logo.svg'
 import Stats from './Stats'
 import RecipeCard from '../containers/RecipeCard'
 import './App.css'
@@ -40,23 +34,6 @@ const App = ({
   onThemeChange,
 }) => (
   <div className="App">
-    {!currentEditModal && !currentViewModal && (
-      <SkipLink target="#main-content" />
-    )}
-
-    <TopBar role="banner">
-      <MenuBar>
-        <TopBarItem>
-          <img alt="" role="presentation" src={logo} />
-          <span>awesome recipes</span>
-        </TopBarItem>
-        <TopBarItem className="ThemeSwitcher" onClick={onThemeSwitchClick}>
-          <Icon type="sun" />
-          theme
-        </TopBarItem>
-      </MenuBar>
-    </TopBar>
-
     <Layout>
       <Main id="main-content" aria-labelledby="main-heading" tabIndex={-1}>
         <h1 id="main-heading">
