@@ -19,16 +19,14 @@ $ npm install
 $ npm start
 ```
 
-## Demos
+## axe DevTools Pro (browser extension) Demos
 
-### axe DevTools Pro (browser extension)
-
-#### Automatic Color Contrast Analyzer
+### Automatic Color Contrast Analyzer
 
 - [auto color contrast analyzer blog post](https://www.deque.com/blog/axe-devtools-extension-update-new-color-contrast-analyzer/)
 - [auto color contrast analyzer documentation](https://docs.deque.com/devtools-html/4.0.0/en/devtools-color-contrast-resolver)
 
-##### Steps to demo
+#### Steps to demo
 
 - ensure needs review is not disabled ([see configuration docs](https://docs.deque.com/devtools-html/4.0.0/en/devtools-configuration#general-settings))
 - run auto scan via "Scan ALL of my page" on https://workshop2.dequelabs.com (or localhost if running locally)
@@ -36,22 +34,22 @@ $ npm start
   > We've found (8) color contrast issues for you to review. Click to automatically review them.
 - All 8 of the needs review color contrast issues should now be resolved automatically
 
-#### Automatic identification of interactive elements via computer vision
+### Automatic identification of interactive elements via computer vision
 
 - [Interactive Elements IGT documentation](https://docs.deque.com/devtools-html/4.0.0/en/devtools-igt-interactive-elements)
 
-##### Steps to demo
+#### Steps to demo
 
 - create or navigate to saved test for https://workshop2.dequelabs.com (or localhost if running locally)
 - start new Interactive Elements IGT run
 - observe the automatic predictions of interactive elements (specifically the "COOK {RECIPE_NAME}" buttons)
   - NOTE: intermittently AI may predict some non interactive elements (like table cells) but it will always predict all 8 of the "COOK" buttons which are missing interactive semantics.
 
-#### Automatic identification of table headers via computer vision
+### Automatic identification of table headers via computer vision
 
 - [Interactive Elements IGT documentation](https://docs.deque.com/devtools-html/4.0.0/en/devtools-igt-table)
 
-##### Steps to demo
+#### Steps to demo
 
 - create or navigate to saved test for https://workshop2.dequelabs.com (or localhost if running locally)
 - start new Table IGT run
