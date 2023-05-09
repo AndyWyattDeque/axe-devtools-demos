@@ -1,11 +1,11 @@
-# Accessibility in Design & Development: Day II
+# axe DevTools Demos
 
-https://smashingconf.com/online-workshops/workshops/deque-accessibility
+https://workshop2.dequelabs.com
 
 ## Prerequisites
 
-- node 16
-- npm 8.x
+- node 19
+- npm 9+
 
 ## Installation
 
@@ -19,112 +19,45 @@ $ npm install
 $ npm start
 ```
 
-## Let's get started!
+## Demos
 
-### Review application
+### axe DevTools Pro (browser extension)
 
-Navigate to [http://localhost:3000](http://localhost:3000) or [https://workshop2.dequelabs.com/](https://workshop2.dequelabs.com/)
+#### Automatic Color Contrast Analyzer
 
-### Review codebase
+- [auto color contrast analyzer blog post](https://www.deque.com/blog/axe-devtools-extension-update-new-color-contrast-analyzer/)
+- [auto color contrast analyzer documentation](https://docs.deque.com/devtools-html/4.0.0/en/devtools-color-contrast-resolver)
 
-- react
-- containers?
-- components
-- 3rd party libs (cauldron)
+##### Steps to demo
 
-### Introduction to axe DevTools Chrome Extension
+- ensure needs review is not disabled ([see configuration docs](https://docs.deque.com/devtools-html/4.0.0/en/devtools-configuration#general-settings))
+- run auto scan via "Scan ALL of my page" on https://workshop2.dequelabs.com (or localhost if running locally)
+- Click the button
+  > We've found (8) color contrast issues for you to review. Click to automatically review them.
+- All 8 of the needs review color contrast issues should now be resolved automatically
 
-- [Download axe from chrome webstore](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
-- open up developer tools in tab with app open
-- poke around
-- free vs pro features
+#### Automatic identification of interactive elements via computer vision
 
-### Running our first scan
+- [Interactive Elements IGT documentation](https://docs.deque.com/devtools-html/4.0.0/en/devtools-igt-interactive-elements)
 
-- click "Scan ALL of my page"
-- review results
+##### Steps to demo
 
-### Saving our test
+- create or navigate to saved test for https://workshop2.dequelabs.com (or localhost if running locally)
+- start new Interactive Elements IGT run
+- observe the automatic predictions of interactive elements (specifically the "COOK {RECIPE_NAME}" buttons)
+  - NOTE: intermittently AI may predict some non interactive elements (like table cells) but it will always predict all 8 of the "COOK" buttons which are missing interactive semantics.
 
-- click "SAVE TEST"
+#### Automatic identification of table headers via computer vision
 
-### Enter IGT (Intelligent Guided Testing)
+- [Interactive Elements IGT documentation](https://docs.deque.com/devtools-html/4.0.0/en/devtools-igt-table)
 
-- activate "Guided Tests" tab
-- review testing progress
+##### Steps to demo
 
-#### Keyboard IGT
-
-Run the keyboard IGT and review results
-
-#### Modal IGT
-
-> Utilizing multi-run IGT to get coverage of 100% of modals on page
-
-- run on theme modal
-- run on edit recipe modal
-- run on cook recipe modal
-
-#### Images IGT
-
-> Utilizing multi-run IGT to break testing down logically
-
-- run on stats icons
-- run on pencil icons
-- run on recipe card images
-
-#### Forms IGT
-
-- run on theme modal form
-- run on edit modal form
-- run on cook modal form
-
-### Review our results
-
-> :tada:
-
-Keep up the good work! We've found quite a few accessibility issues.
-
-### Fixing accessibility issues and verifying the fixes
-
-> A "fixed" version of our application has been deployed to [https://fixed.d12unv3hg61pve.amplifyapp.com/](https://fixed.d12unv3hg61pve.amplifyapp.com/) (sorry for the funky URL!)
-
-#### Keyboard Issues
-
-> Role: The element's role is missing or incorrect
-
-- Ensure the edit recipe control is marked up as a button (see `src/components/RecipeCard.js`)
-- Verify fix by running Keyboard IGT again
-
-#### Modal Issues
-
-> Pattern libraries with accessibility baked in (no pun intended!)
-
-- Deque's accessible pattern library [cauldron](https://cauldron.dequelabs.com/)
-- Replace project's modals with cauldron's modal component
-- Run Modal IGT on each of the 3 types of modals in app
-
-#### Image Issues
-
-- mark stat icons as decorative (`alt=""` and/or `role="presentation"`)
-- run Images IGT on stat icons
-- give the edit images (pencil icons) accessible names that match wireframes (day I)
-- run Images IGT on pencil icons
-
-#### Forms Issues
-
-- Mark the edit recipe modal fields as well as the "Rate the yumminess (0 - 50)" field in the cook modal form as required (via [cauldron `<TexField />`](https://cauldron.dequelabs.com/components/TextField) component's `required` prop)
-- Give the edit recipe modal fields the expected descriptive labels (refer to wireframes!)
-- Make the form error message more descriptive so users understand how to fix the error.
-  - `src/components/CookRecipeModal.js`
-  - `src/components/EditRecipeModal.js`
-- Run Forms IGT on Edit Recipe form
-- Run Forms IGT on Cook Recipe form
-
-#### Structure IGT (if time permits)
-
-Find the accessibility issues, fix them, and validate the fixes!
-
-#### Extra credit: fix the color contrast issue found by automatic scan
-
-**Hint**: the wireframes yesterday included the expected color(s)!
+- create or navigate to saved test for https://workshop2.dequelabs.com (or localhost if running locally)
+- start new Table IGT run
+- select the "Full Recipe Breakdown" table at the bottom of the page
+- select "A table with 1 row of headers"
+- observe the automatic predictions of table headers
+  - for the first (header) row, notice how it says "Our AI identified this as a header cell. If that is correct, click the 'THIS IS NOT A DATA CELL' button below."
+- click "THIS IS NOT A DATA CELL" for each of the cells in the first row
+- once you get to the first real data cell ("Chocolate Cake"), notice that the table header is already pre-selected (:robot:) so all you have to do is click "NEXT" for the entire table test
