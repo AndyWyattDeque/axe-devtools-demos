@@ -1,6 +1,10 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Dashboard from '../components/Dashboard'
+import Skeleton from '../components/Skeleton'
 import { getData, setData, getStats } from '../utils'
-import AppComponent from '../components/App'
+import Settings from '../components/Settings'
+import NoMatch from '../components/NoMatch'
 
 const CAULDRON_DARK_THEME_CLASS = 'cauldron--theme-dark'
 const THEME_STORAGE_KEY = 'THEME_STORAGE_KEY'
@@ -9,7 +13,6 @@ const App = () => {
   const cachedDarkTheme = localStorage.getItem(THEME_STORAGE_KEY) === 'dark'
   const [recipes, setRecipes] = React.useState(getData())
   const [stats, setStats] = React.useState(getStats(recipes))
-  const [themeModalActive, setThemeModalActive] = React.useState(false)
   const [isDarkTheme, setIsDarkTheme] = React.useState(cachedDarkTheme)
   const [currentThemeSelection, setCurrentThemeSelection] = React.useState(
     cachedDarkTheme ? 'dark' : 'light'
@@ -33,19 +36,11 @@ const App = () => {
     setData(updatedRecipes)
   }
 
-  const onThemeSwitchClick = () => {
-    setThemeModalActive(!themeModalActive)
-  }
-  const onThemeModalClose = () => {
-    setThemeModalActive(!themeModalActive)
-  }
-  const onThemeModalSubmit = (e) => {
+  const onThemeChange = (radio) => setCurrentThemeSelection(radio.value)
+  const onSettingsSubmit = (e) => {
     e.preventDefault()
     setIsDarkTheme(currentThemeSelection === 'dark')
-    onThemeModalClose()
-    localStorage.setItem(THEME_STORAGE_KEY, currentThemeSelection)
   }
-  const onThemeChange = (radio) => setCurrentThemeSelection(radio.value)
 
   React.useEffect(() => {
     if (isDarkTheme) {
@@ -56,21 +51,35 @@ const App = () => {
   }, [isDarkTheme])
 
   return (
-    <AppComponent
-      recipes={recipes}
-      stats={stats}
-      currentEditModal={currentEditModal}
-      setCurrentEditModal={setCurrentEditModal}
-      currentViewModal={currentViewModal}
-      setCurrentViewModal={setCurrentViewModal}
-      updateRecipe={updateRecipe}
-      onThemeSwitchClick={onThemeSwitchClick}
-      themeModalActive={themeModalActive}
-      onThemeChange={onThemeChange}
-      onThemeModalClose={onThemeModalClose}
-      onThemeModalSubmit={onThemeModalSubmit}
-      currentThemeSelection={currentThemeSelection}
-    />
+    <Routes>
+      <Route path="/" element={<Skeleton />}>
+        <Route
+          index
+          element={
+            <Dashboard
+              recipes={recipes}
+              stats={stats}
+              currentEditModal={currentEditModal}
+              setCurrentEditModal={setCurrentEditModal}
+              currentViewModal={currentViewModal}
+              setCurrentViewModal={setCurrentViewModal}
+              updateRecipe={updateRecipe}
+            />
+          }
+        />
+        <Route
+          path="settings"
+          element={
+            <Settings
+              onThemeChange={onThemeChange}
+              onSettingsSubmit={onSettingsSubmit}
+              currentThemeSelection={currentThemeSelection}
+            />
+          }
+        />
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
   )
 }
 

@@ -33,7 +33,6 @@ module.exports = {
       },
     ],
   },
-  // pass all js files through Babel
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
@@ -42,5 +41,6 @@ module.exports = {
       directory: path.join(__dirname, 'build'),
     },
     port: 3033,
+    historyApiFallback: true,
   },
 }

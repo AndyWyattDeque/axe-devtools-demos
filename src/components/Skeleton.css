@@ -3,6 +3,10 @@
   top: auto;
 }
 
+.App .TopBar {
+  position: relative;
+}
+
 .App .TopBar img {
   width: 30px;
 }
@@ -108,4 +112,8 @@ h1 span {
 
 .cauldron--theme-dark .RecipesTable .THead {
   color: var(--table-cell-background-color);
+}
+
+.App .Radio__overlay {
+  display: flex;
 }
