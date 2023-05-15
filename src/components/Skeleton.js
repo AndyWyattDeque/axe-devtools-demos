@@ -8,9 +8,11 @@ const Skeleton = () => (
     <nav className="TopBar">
       <ul>
         <TopBarItem>
+          <Icon type="clipboard" />
           <Link to="/">Dashboard</Link>
         </TopBarItem>
         <TopBarItem>
+          <Icon type="gears" />
           <Link to="/settings">Settings</Link>
         </TopBarItem>
       </ul>

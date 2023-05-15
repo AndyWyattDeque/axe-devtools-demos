@@ -40,6 +40,7 @@ const App = () => {
   const onSettingsSubmit = (e) => {
     e.preventDefault()
     setIsDarkTheme(currentThemeSelection === 'dark')
+    localStorage.setItem(THEME_STORAGE_KEY, currentThemeSelection)
   }
 
   React.useEffect(() => {
