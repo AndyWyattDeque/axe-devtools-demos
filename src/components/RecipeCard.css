@@ -97,6 +97,7 @@
   border-radius: 0;
   padding: 15px;
   box-shadow: none;
+  background: #15a1f8;
 }
 
 .Recipes__card-foot .Button--primary:hover {

@@ -117,3 +117,24 @@ h1 span {
 .App .Radio__overlay {
   display: flex;
 }
+
+footer {
+  align-items: center;
+  background-color: #283640;
+  border-top: 1px solid #5d676f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 .5em;
+  display: inline-block;
+}
+
+footer label.Field__label {
+  color: #fff;
+}

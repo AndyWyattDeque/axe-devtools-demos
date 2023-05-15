@@ -16,7 +16,7 @@ const RecipeCard = ({ recipe, setCurrentEditModal, setCurrentViewModal }) => (
         <img src={pencil} className="edit" alt="Edit" />
       </div>
       <div className="Heading">{recipe.name}</div>
-      <img src={recipe.image} className="Recipe__image" alt="" />
+      <img src={recipe.image} className="Recipe__image" />
     </div>
     <div className="Recipes__card-content">
       <table>
@@ -37,7 +37,10 @@ const RecipeCard = ({ recipe, setCurrentEditModal, setCurrentViewModal }) => (
       </table>
     </div>
     <div className="Recipes__card-foot" role="alert">
-      <div className="Button--primary" onClick={() => setCurrentViewModal(recipe.name)}>
+      <div
+        className="Button--primary"
+        onClick={() => setCurrentViewModal(recipe.name)}
+      >
         <span className="BracketLeft" aria-hidden="true">
           [
         </span>
