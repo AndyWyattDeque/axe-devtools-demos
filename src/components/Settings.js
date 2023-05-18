@@ -7,6 +7,7 @@ import {
   RadioGroup,
   Toast,
 } from '@deque/cauldron-react'
+import questionMark from '../img/icons/question-circle.png'
 
 const Settings = ({
   onThemeChange,
@@ -35,6 +36,7 @@ const Settings = ({
       <form onSubmit={handleSubmit}>
         <FieldWrap>
           <h2 id="theme-group-label">Theme</h2>
+          <img style={{ display: 'none' }} src={questionMark} alt="" />
           <RadioGroup
             role="group"
             aria-labelledby="theme-group-label"
@@ -52,6 +54,9 @@ const Settings = ({
               },
             ]}
           />
+          {/* <Button variant="secondary">
+            <img src={questionMark} />
+          </Button> */}
           <br />
           <Button type="submit">Submit</Button>
         </FieldWrap>
