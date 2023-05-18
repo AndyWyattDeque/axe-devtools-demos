@@ -36,6 +36,7 @@ const Settings = ({
         <FieldWrap>
           <h2 id="theme-group-label">Theme</h2>
           <RadioGroup
+            role="group"
             aria-labelledby="theme-group-label"
             value={currentThemeSelection}
             onChange={onThemeChange}
