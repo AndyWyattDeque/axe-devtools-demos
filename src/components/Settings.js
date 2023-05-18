@@ -47,10 +47,12 @@ const Settings = ({
               {
                 label: 'Dark',
                 value: 'dark',
+                name: 'theme',
               },
               {
                 label: 'Light',
                 value: 'light',
+                name: 'theme',
               },
             ]}
           />
