@@ -19,7 +19,7 @@ $ npm install
 $ npm start
 ```
 
-## axe DevTools Pro (browser extension) Demos
+## axe DevTools Pro Browser Extension Demos
 
 ### Automatic Color Contrast Analyzer
 
