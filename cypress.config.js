@@ -17,5 +17,6 @@ module.exports = defineConfig(
       specPattern: './test/cypress/*.js',
       supportFile: './test/support.js',
     },
+    video: false,
   })
 )
