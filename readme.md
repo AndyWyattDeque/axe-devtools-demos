@@ -4,8 +4,8 @@ https://workshop2.dequelabs.com
 
 ## Prerequisites
 
-- node 19
-- npm 9+
+- node 18
+- npm 8+
 
 ## Installation
 
