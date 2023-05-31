@@ -14,8 +14,8 @@ module.exports = defineConfig(
       serverURL: SERVER_URL,
     },
     e2e: {
-      specPattern: './test/cypress/*.js',
-      supportFile: './test/support.js',
+      specPattern: './test/axe-watcher/cypress/*.js',
+      supportFile: './test/axe-watcher/support.js',
     },
     video: false,
   })
