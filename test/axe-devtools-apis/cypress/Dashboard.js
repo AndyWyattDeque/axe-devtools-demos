@@ -2,23 +2,23 @@ const resultsDir = './results/'
 
 describe('Dashboard', () => {
   afterEach(() => {
-    cy.getAxeResults().then(async (results) => {
+    cy.getAxeResults().then((results) => {
       cy.task(
         'log',
         `axe found ${results.findings.violations.length} violations`
       )
 
-      await cy.writeFile(
+      cy.writeFile(
         `${resultsDir}results-${new Date().valueOf()}.json`,
         results
       )
     })
   })
 
-  after(async () => {
-    await cy.task('reportAsHTML', { resultsDir })
+  after(() => {
+    cy.task('reportAsHTML', { resultsDir })
     // Example of junit report generation:
-    // await cy.task('reportAsJunit', { resultsDir })
+    cy.task('reportAsJunit', { resultsDir })
   })
 
   it('has expected nav items', () => {
