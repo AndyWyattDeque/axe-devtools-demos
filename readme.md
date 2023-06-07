@@ -21,6 +21,12 @@ $ npm start
 
 ## axe DevTools Pro Browser Extension Demos
 
+### axe DevTools Linter
+
+- set up the axe DevTools Linter Connector: https://docs.deque.com/linter/4.0.0/en/axe-linter-connector
+- move the downloaded connector to `.husky/_/`
+- set the `AXE_LINTER_API_KEY` env var to a valid production linter key
+
 ### Automatic Color Contrast Analyzer
 
 - [auto color contrast analyzer blog post](https://www.deque.com/blog/axe-devtools-extension-update-new-color-contrast-analyzer/)
