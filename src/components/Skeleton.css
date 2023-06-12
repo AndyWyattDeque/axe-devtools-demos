@@ -149,3 +149,7 @@ footer label.Field__label {
 .App .TopBar > ul > li:focus-within:before {
   background-color: transparent;
 }
+
+.App .Align--right {
+  margin-left: auto;
+}

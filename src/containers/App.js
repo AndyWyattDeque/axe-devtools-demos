@@ -5,6 +5,8 @@ import Skeleton from '../components/Skeleton'
 import { getData, setData, getStats } from '../utils'
 import Settings from '../components/Settings'
 import NoMatch from '../components/NoMatch'
+import Blog from '../components/Blog'
+import BlogPost from '../components/BlogPost'
 
 const CAULDRON_DARK_THEME_CLASS = 'cauldron--theme-dark'
 const THEME_STORAGE_KEY = 'THEME_STORAGE_KEY'
@@ -69,7 +71,7 @@ const App = () => {
           }
         />
         <Route
-          path="settings"
+          path="/settings"
           element={
             <Settings
               onThemeChange={onThemeChange}
@@ -78,6 +80,8 @@ const App = () => {
             />
           }
         />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>

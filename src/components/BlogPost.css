@@ -1,0 +1,9 @@
+.Blog .Link {
+  display: inline-block;
+}
+
+.Icon__left {
+  transform: rotate(90deg);
+  display: inline-block;
+  vertical-align: middle;
+}

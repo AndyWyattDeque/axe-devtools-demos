@@ -12,6 +12,10 @@ const Skeleton = () => (
           <Link to="/">Dashboard</Link>
         </TopBarItem>
         <TopBarItem>
+          <Icon type="clipboard" />
+          <Link to="/blog">Blog</Link>
+        </TopBarItem>
+        <TopBarItem className="Align--right">
           <Icon type="gears" />
           <Link to="/settings">Settings</Link>
         </TopBarItem>
