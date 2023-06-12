@@ -153,3 +153,11 @@ footer label.Field__label {
 .App .Align--right {
   margin-left: auto;
 }
+
+.App .TopBar {
+  height: auto;
+}
+
+.App .TopBar li {
+  border: 0;
+}
