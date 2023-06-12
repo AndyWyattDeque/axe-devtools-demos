@@ -19,12 +19,16 @@ const Skeleton = () => {
     <div className="App">
       <NavBar className="TopBar">
         <NavItem active={paths.dashboardIsActive}>
-          <Icon type="info-circle" />
-          <Link to="/">Dashboard</Link>
+          <Link to="/">
+            <Icon type="info-circle" />
+            Dashboard
+          </Link>
         </NavItem>
         <NavItem active={paths.blogIsActive}>
-          <Icon type="clipboard" />
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">
+            <Icon type="clipboard" />
+            Blog
+          </Link>
         </NavItem>
         <NavItem
           active={paths.settingsIsActive}
@@ -32,8 +36,10 @@ const Skeleton = () => {
             paths.settingsIsActive ? 'NavItem--active' : ''
           }`}
         >
-          <Icon type="gears" />
-          <Link to="/settings">Settings</Link>
+          <Link to="/settings">
+            <Icon type="gears" />
+            Settings
+          </Link>
         </NavItem>
       </NavBar>
       <Layout>

@@ -161,3 +161,7 @@ footer label.Field__label {
 .App .TopBar li {
   border: 0;
 }
+
+.App .TopBar li .Icon {
+  margin-right: var(--space-smaller);
+}
