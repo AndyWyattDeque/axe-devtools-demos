@@ -1,3 +1,7 @@
+.Blog {
+  margin: 0 0 var(--space-largest) 0;
+}
+
 .Blog .Link {
   display: inline-block;
 }
@@ -6,4 +10,8 @@
   transform: rotate(90deg);
   display: inline-block;
   vertical-align: middle;
+}
+
+.Blog .Link.Back {
+  margin: 0 0 var(--space-small) 0;
 }
