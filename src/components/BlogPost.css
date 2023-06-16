@@ -15,3 +15,28 @@
 .Blog .Link.Back {
   margin: 0 0 var(--space-small) 0;
 }
+
+.Blog__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Reported {
+  position: absolute;
+  padding: 1em;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 2em auto;
+  z-index: 9;
+  background-color: var(--workspace-background-color);
+  color: var(--text-color-base);
+  box-shadow: 0 0 3px;
+  display: flex;
+  align-items: center;
+}
+
+.cauldron--theme-dark .Reported {
+  background-color: var(--dark-workspace-color);
+  color: var(--white);
+}
