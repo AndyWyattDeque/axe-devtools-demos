@@ -9,7 +9,7 @@ describe('Dashboard', () => {
       )
 
       cy.writeFile(
-        `${resultsDir}results-dashboard-${new Date().valueOf()}.json`,
+        `${resultsDir}results-blog-${new Date().valueOf()}.json`,
         results
       )
     })
@@ -21,19 +21,17 @@ describe('Dashboard', () => {
     cy.task('reportAsJunit', { resultsDir })
   })
 
-  it('has expected nav items', () => {
-    cy.visit('http://localhost:3033')
+  it('has expected landmarks', () => {
+    cy.visit('http://localhost:3033/blog')
     cy.get('nav').should('exist')
-    cy.get('nav a[href="/"]').should('exist')
-    cy.get('nav a[href="/settings"]').should('exist')
+    cy.get('main').should('exist')
+    cy.get('h1').should('exist')
     cy.axeAnalyze()
   })
 
-  it('has expected page structure', () => {
-    cy.visit('http://localhost:3033')
-    cy.get('h1').should('exist')
-    cy.get('main').should('exist')
-    cy.get('footer').should('exist')
+  it('has blog post links', () => {
+    cy.visit('http://localhost:3033/blog')
+    cy.get('.Panel a').should('have.length', 9)
     cy.axeAnalyze()
   })
 })
