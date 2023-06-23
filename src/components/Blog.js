@@ -40,6 +40,12 @@ const Blog = () => {
             >
               Apply to be a writer
             </OptionsMenuItem>
+            {/* <OptionsMenuItem
+              role="button"
+              onSelect={onOptionSelectFactory('/contact-blog-admin')}
+            >
+              Contact blog admin
+            </OptionsMenuItem> */}
           </OptionsMenu>
         }
       >
