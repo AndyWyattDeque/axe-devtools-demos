@@ -16,6 +16,11 @@
   margin: 0 0 var(--space-small) 0;
 }
 
+.Blog .Report {
+  margin-left: auto;
+  margin-right: 1.1em;
+}
+
 .Blog__links {
   display: flex;
   justify-content: space-between;

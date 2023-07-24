@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Button,
   Main,
   FieldWrap,
   OptionsMenu,
@@ -11,6 +12,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import blogData from '../blog-data'
 import LandingPage from './LandingPage'
 import arrowRight from '../img/icons/arrow-right.png'
+import blogHero from '../img/food/blog-hero.jpg'
+import './Blog.css'
 
 const Blog = () => {
   const navigate = useNavigate()
@@ -49,6 +52,9 @@ const Blog = () => {
           </OptionsMenu>
         }
       >
+        <div className="Blog-hero">
+          <img src={blogHero} />
+        </div>
         {blogData.map((blog) => (
           <FieldWrap key={blog.id}>
             <div>
@@ -64,6 +70,9 @@ const Blog = () => {
             the content!
           </em>
         </p>
+        <Button className="RequestNew" variant="Link" aria-label="">
+          <span aria-hidden="true">Request new blog post</span>
+        </Button>
       </LandingPage>
     </Main>
   )
