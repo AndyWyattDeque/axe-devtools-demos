@@ -35,8 +35,18 @@ const BlogPost = () => {
                 <Icon type="arrow-circle-left" />
                 Back to blog
               </Link>
-              <Button onClick={onReportOffensiveClick} variant="link">
+              <Button
+                onClick={onReportOffensiveClick}
+                variant="link"
+                className="Report"
+              >
                 Report offensive content
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => window.alert('download started...')}
+              >
+                <Icon type="export-solid" />
               </Button>
             </div>
             <FieldWrap>
