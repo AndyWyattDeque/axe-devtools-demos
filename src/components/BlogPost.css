@@ -45,3 +45,11 @@
   background-color: var(--dark-workspace-color);
   color: var(--white);
 }
+
+.Author {
+  color: #ccc;
+}
+
+.cauldron--theme-dark .Author {
+  color: #999;
+}
