@@ -29,7 +29,7 @@ const BlogPost = () => {
           </div>
         )}
         {data ? (
-          <div>
+          <div role="wrapper">
             <div className="Blog__links">
               <Link className="Link Back" to="/blog">
                 <Icon type="arrow-circle-left" />
@@ -52,10 +52,17 @@ const BlogPost = () => {
             <FieldWrap>
               <h1 id="main-heading">{data.title}</h1>
               {data.content}
+              <div>
+                <a role="listitem" href="#" className="Author">
+                  About the author
+                </a>
+              </div>
             </FieldWrap>
           </div>
         ) : (
-          <h1 id="main-heading">Blog post not found</h1>
+          <h1 id="main-heading" aria-live="rude">
+            Blog post not found
+          </h1>
         )}
       </Main>
     </div>
