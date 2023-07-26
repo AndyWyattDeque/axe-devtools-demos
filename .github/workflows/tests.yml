@@ -59,7 +59,7 @@ jobs:
           npm config set "//agora.dequecloud.com/artifactory/api/npm/dequelabs/:email" "${{ secrets.AGORA_AUTH_EMAIL }}"
       - run: npm install
       - uses: browser-actions/setup-chrome@latest
-      - uses: nanasess/setup-chromedriver@v1
+      - uses: nanasess/setup-chromedriver@v2
       - run: npm run build
       - name: Run tests
         uses: GabrielBB/xvfb-action@v1
