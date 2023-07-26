@@ -14,6 +14,7 @@
     "pree2e:cypress:devtools": "rimraf ./results",
     "cypress:devtools": "cypress run --headed --browser=chrome --config-file=cypress.devtools.config.js",
     "cypress:watcher": "cypress run --headed --browser=chrome --config-file=cypress.watcher.config.js",
+    "cypress:interactive": "cypress open --browser=chrome --config-file=cypress.watcher.config.js",
     "e2e:cypress:devtools": "start-server-and-test start-server http://localhost:3033 cypress:devtools",
     "e2e:cypress:watcher": "start-server-and-test start-server http://localhost:3033 cypress:watcher"
   },
@@ -21,7 +22,7 @@
   "author": "",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@axe-core/watcher": "^1.8.2",
+    "@axe-core/watcher": "^2.2.0",
     "@axe-devtools/cypress": "^4.7.0",
     "@axe-devtools/reporter": "^4.6.0",
     "@babel/core": "^7.19.1",
