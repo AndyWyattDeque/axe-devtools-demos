@@ -2,6 +2,7 @@ import React from 'react'
 import { Main, Icon, FieldWrap, Button } from '@deque/cauldron-react'
 import { Link, useParams } from 'react-router-dom'
 import blogData from '../blog-data'
+import logo from '../img/icons/logo.svg'
 import './BlogPost.css'
 
 // display message for 4 seconds
@@ -50,11 +51,22 @@ const BlogPost = () => {
               </Button>
             </div>
             <FieldWrap>
-              <h1 id="main-heading">{data.title}</h1>
+              <div className="Blog__head">
+                <h1 id="main-heading">{data.title}</h1>
+                <img src={logo} />
+              </div>
               {data.content}
               <div>
                 <a role="listitem" href="#" className="Author">
                   About the author
+                </a>
+                &nbsp;|&nbsp;
+                <a role="listitem" href="#" className="Author">
+                  About this blog
+                </a>
+                &nbsp;|&nbsp;
+                <a role="listitem" href="#" className="Author">
+                  About this company
                 </a>
               </div>
             </FieldWrap>

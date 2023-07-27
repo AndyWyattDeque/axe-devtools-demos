@@ -53,3 +53,13 @@
 .cauldron--theme-dark .Author {
   color: #999;
 }
+
+.Blog__head {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+}
+
+.Blog__head img {
+  width: 40px;
+}
