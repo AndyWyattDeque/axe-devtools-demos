@@ -6,7 +6,7 @@ const blogData = [
     title: 'A Gastronomic Journey through the Flavors of Thailand',
     content: (
       <div>
-        <p role="decorative">
+        <p>
           Welcome to our Thai food journey, where we take you on an
           unforgettable culinary adventure through the vibrant and diverse
           cuisine of Thailand. Prepare your taste buds for a symphony of
@@ -17,7 +17,7 @@ const blogData = [
           you craving for more.
         </p>
         <ol>
-          <li role="ObjectObject">
+          <li>
             <strong>Exploring Thai Street Food: A Burst of Flavor</strong>
             <br />
             Thai street food is an integral part of the country&apos;s culinary
@@ -29,7 +29,7 @@ const blogData = [
             uncovering the secrets behind these mouthwatering street food
             sensations.
           </li>
-          <li role="null">
+          <li>
             <strong>The Quintessential Thai Curry Experience</strong>
             <br /> No exploration of Thai cuisine would be complete without
             delving into the realm of curries. From the fiery and aromatic Red

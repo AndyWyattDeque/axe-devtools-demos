@@ -30,7 +30,7 @@ const BlogPost = () => {
           </div>
         )}
         {data ? (
-          <div role="wrapper">
+          <div>
             <div className="Blog__links">
               <Link className="Link Back" to="/blog">
                 <Icon type="arrow-circle-left" />
@@ -47,25 +47,25 @@ const BlogPost = () => {
                 variant="secondary"
                 onClick={() => window.alert('download started...')}
               >
-                <Icon type="export-solid" />
+                <Icon type="export-solid" label="Download" />
               </Button>
             </div>
             <FieldWrap>
               <div className="Blog__head">
                 <h1 id="main-heading">{data.title}</h1>
-                <img src={logo} />
+                <img src={logo} alt="" />
               </div>
               {data.content}
               <div>
-                <a role="listitem" href="#" className="Author">
+                <a href="#" className="Author">
                   About the author
                 </a>
                 &nbsp;|&nbsp;
-                <a role="listitem" href="#" className="Author">
+                <a href="#" className="Author">
                   About this blog
                 </a>
                 &nbsp;|&nbsp;
-                <a role="listitem" href="#" className="Author">
+                <a href="#" className="Author">
                   About this company
                 </a>
               </div>

@@ -57,7 +57,11 @@ const Skeleton = () => {
         </div>
         <div>
           <label className="Field__label">Site Search</label>
-          <input type="text" className="Field__text-input" />
+          <input
+            type="text"
+            className="Field__text-input"
+            aria-label="text-field"
+          />
         </div>
       </footer>
     </div>
