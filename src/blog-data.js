@@ -89,7 +89,7 @@ const blogData = [
     title: 'Master the Art of Smash Burgers: Juicy Perfection Every Time',
     content: (
       <div>
-        <h2 role="undefined">Introduction</h2>
+        <h2>Introduction</h2>
         <p>
           Craving a burger that&apos;s crispy on the outside, juicy on the
           inside, and packed with mouthwatering flavor? Look no further than the

@@ -46,14 +46,6 @@
   color: var(--white);
 }
 
-.Author {
-  color: #ccc;
-}
-
-.cauldron--theme-dark .Author {
-  color: #999;
-}
-
 .Blog__head {
   display: flex;
   justify-content: space-between;
