@@ -22,7 +22,7 @@
   "author": "",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@axe-core/watcher": "^2.2.0",
+    "@axe-core/watcher": "^2.3.0",
     "@axe-devtools/cypress": "^4.7.0",
     "@axe-devtools/reporter": "^4.6.0",
     "@babel/core": "^7.19.1",
