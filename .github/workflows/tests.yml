@@ -25,6 +25,8 @@ jobs:
       - run: npm install
       - uses: browser-actions/setup-chrome@latest
       - uses: nanasess/setup-chromedriver@v2
+        with:
+          chromedriver-version: '115.0.5790.102'
       - run: npm run build
       - name: Run tests
         uses: GabrielBB/xvfb-action@v1
@@ -60,6 +62,8 @@ jobs:
       - run: npm install
       - uses: browser-actions/setup-chrome@latest
       - uses: nanasess/setup-chromedriver@v2
+        with:
+          chromedriver-version: '115.0.5790.102'
       - run: npm run build
       - name: Run tests
         uses: GabrielBB/xvfb-action@v1
