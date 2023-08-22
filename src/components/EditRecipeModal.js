@@ -5,6 +5,7 @@ import Modal, { ModalContent, ModalFooter } from './Modal'
 
 const EditRecipeModal = ({
   show,
+  recipe,
   heading,
   onClose,
   onIngredientAdd,
@@ -23,11 +24,11 @@ const EditRecipeModal = ({
     <Modal show={show} heading={heading} onClose={onClose}>
       <form onSubmit={onSubmit} noValidate>
         <ModalContent>
-          <h3 id="ingredients-heading">Ingredients</h3>
+          <h3 id={`${recipe.name}-edit-ingredients`}>Ingredients</h3>
           <div
             className="RecipeModal__group"
             tabIndex={-1}
-            aria-labelledby="ingredients-heading"
+            aria-labelledby={`${recipe.name}-edit-ingredients`}
           >
             {ingredients.map((ingredient, index) => (
               <div className="RecipeModalItem" key={`${ingredient}-${index}`}>
@@ -51,11 +52,11 @@ const EditRecipeModal = ({
               + Add another ingredient
             </Button>
           </div>
-          <h3 id="instructions-heading">Instructions</h3>
+          <h3 id={`${recipe.name}-edit-instructions`}>Instructions</h3>
           <div
             className="RecipeModal__group"
             tabIndex={-1}
-            aria-labelledby="instructions-heading"
+            aria-labelledby={`${recipe.name}-edit-instructions`}
           >
             {instructions.map((instruction, index) => (
               <div className="RecipeModalItem" key={`${instruction}-${index}`}>
@@ -106,5 +107,6 @@ EditRecipeModal.propTypes = {
   instructionRefs: PropTypes.object.isRequired,
   ingredientErrors: PropTypes.array.isRequired,
   instructionErrors: PropTypes.array.isRequired,
+  recipe: PropTypes.object.isRequired,
 }
 export default EditRecipeModal

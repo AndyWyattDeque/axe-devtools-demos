@@ -18,11 +18,11 @@ const CookRecipeModal = ({
   <Modal show={show} heading={heading} onClose={onClose}>
     <form onSubmit={onSubmit} className="RecipeModal" noValidate>
       <ModalContent>
-        <h3 id="ingredients-heading">Ingredients</h3>
+        <h3 id={`${recipe.name}-ingredients`}>Ingredients</h3>
         <div
           className="RecipeModal__group"
           tabIndex={-1}
-          aria-labelledby="ingredients-heading"
+          aria-labelledby={`${recipe.name}-ingredients`}
         >
           <ul>
             {recipe.ingredients.map((ingredient, index) => (
@@ -30,11 +30,11 @@ const CookRecipeModal = ({
             ))}
           </ul>
         </div>
-        <h3 id="instructions-heading">Instructions</h3>
+        <h3 id={`${recipe.name}-instructions`}>Instructions</h3>
         <div
           className="RecipeModal__group"
           tabIndex={-1}
-          aria-labelledby="instructions-heading"
+          aria-labelledby={`${recipe.name}-instructions`}
         >
           <ol>
             {recipe.instructions.map((instruction, index) => (
@@ -55,7 +55,6 @@ const CookRecipeModal = ({
           />
           <Checkbox
             value="true"
-            id="grease-fire"
             name="grease-fire"
             label="I caused a grease fire making this"
             ref={greaseFireRef}
