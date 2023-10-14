@@ -34,5 +34,9 @@
 }
 
 .LandingPage .Panel a:focus {
-  outline: 0;
+  color: var(--gray-20);
+}
+
+.cauldron--theme-dark .LandingPage .Panel a:focus {
+  color: var(--gray-80);
 }
