@@ -16,7 +16,8 @@
     "cypress:watcher": "cypress run --headed --browser=chrome --config-file=cypress.watcher.config.js",
     "cypress:interactive": "cypress open --browser=chrome --config-file=cypress.watcher.config.js",
     "e2e:cypress:devtools": "start-server-and-test start-server http://localhost:3033 cypress:devtools",
-    "e2e:cypress:watcher": "start-server-and-test start-server http://localhost:3033 cypress:watcher"
+    "e2e:cypress:watcher": "start-server-and-test start-server http://localhost:3033 cypress:watcher",
+    "start:mui": "yarn --cwd=mui start"
   },
   "keywords": [],
   "author": "",
