@@ -63,6 +63,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.4",
     "@deque/cauldron-react": "^5.3.0",
     "@deque/cauldron-styles": "^5.3.0",
     "classnames": "^2.3.2",

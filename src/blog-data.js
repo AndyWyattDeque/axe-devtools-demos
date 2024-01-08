@@ -1,4 +1,13 @@
 import React from 'react'
+import Carousel, {
+  autoplayPlugin,
+  arrowsPlugin,
+} from '@brainhubeu/react-carousel'
+import { IconButton } from '@deque/cauldron-react'
+import burger from './img/food/burger.png'
+import burger1 from './img/food/burger1.jpg'
+import burger2 from './img/food/burger2.jpg'
+import '@brainhubeu/react-carousel/lib/style.css'
 
 const blogData = [
   {
@@ -89,6 +98,49 @@ const blogData = [
     title: 'Master the Art of Smash Burgers: Juicy Perfection Every Time',
     content: (
       <div>
+        <div className="Carousel">
+          <Carousel
+            plugins={[
+              'infinite',
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 2000,
+                },
+              },
+              {
+                resolve: arrowsPlugin,
+                options: {
+                  arrowLeft: <IconButton icon="chevron-left" label="Prev" />,
+                  arrowLeftDisabled: (
+                    <IconButton disabled icon="chevron-left" label="Prev" />
+                  ),
+                  arrowRight: (
+                    <IconButton
+                      className="ChevronRight"
+                      icon="chevron-right"
+                      label="Next"
+                    />
+                  ),
+                  arrowRightDisabled: (
+                    <IconButton
+                      className="ChevronRight"
+                      disabled
+                      icon="chevron-right"
+                      label="Next"
+                    />
+                  ),
+                  addArrowClickHandler: true,
+                },
+              },
+            ]}
+            animationSpeed={1000}
+          >
+            <img src={burger} alt="Burger" />
+            <img src={burger1} alt="Burger" />
+            <img src={burger2} alt="Burger" />
+          </Carousel>
+        </div>
         <h2>Introduction</h2>
         <p>
           Craving a burger that&apos;s crispy on the outside, juicy on the
