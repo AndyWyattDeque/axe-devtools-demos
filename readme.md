@@ -19,13 +19,32 @@ $ npm install
 $ npm start
 ```
 
-## axe DevTools Pro Browser Extension Demos
-
-### axe DevTools Linter
+## axe DevTools Linter
 
 - set up the axe DevTools Linter Connector: https://docs.deque.com/linter/4.0.0/en/axe-linter-connector
 - move the downloaded connector to `.husky/_/`
 - set the `AXE_LINTER_API_KEY` env var to a valid production linter key
+
+## axe Developer Hub
+
+### Running local cypress tests
+
+- Install appropriate packages `npm install`
+- Start the local server `npm start`
+- Create a project within [axe Developer Hub](https://axe.deque.com/axe-watcher/projects), select "cypress" as the project type
+- Use the API key to create environment variables for `API_KEY` and `SERVER_URL`
+  - `export API_KEY=<your_api_key>`
+  - `export SERVER_URL=https://axe.deque.com/`
+- Run the cypress tests `npm run cypress:watcher`
+- Check your results in [axe Developer Hub](https://axe.deque.com/axe-watcher/projects)
+
+### Viewing the results of the GitHub Action
+
+- Create a pull request in this repo
+- Wait for the GitHub Action to run
+- Watcher will add a comment to the PR e.g., "axe Watcher found 28 accessibility violations in this PR."
+
+## axe DevTools Pro Browser Extension Demos
 
 ### Automatic Color Contrast Analyzer
 
