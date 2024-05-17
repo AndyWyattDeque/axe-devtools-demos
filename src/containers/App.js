@@ -7,6 +7,8 @@ import Settings from '../components/Settings'
 import NoMatch from '../components/NoMatch'
 import Blog from '../components/Blog'
 import BlogPost from '../components/BlogPost'
+import RequestBlogPost from '../components/RequestBlogPost'
+import RequestBlogPostConfirmation from '../components/RequestBlogPostConfirmation'
 
 const CAULDRON_DARK_THEME_CLASS = 'cauldron--theme-dark'
 const THEME_STORAGE_KEY = 'THEME_STORAGE_KEY'
@@ -82,6 +84,11 @@ const App = () => {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/request-blog" element={<RequestBlogPost />} />
+        <Route
+          path="/request-blog/confirmation"
+          element={<RequestBlogPostConfirmation />}
+        />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
