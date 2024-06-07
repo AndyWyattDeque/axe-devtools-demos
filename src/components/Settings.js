@@ -56,9 +56,9 @@ const Settings = ({
               },
             ]}
           />
-          {/* <Button variant="secondary">
+          {<Button variant="secondary">
             <img src={questionMark} />
-          </Button> */}
+          </Button>}
           <br />
           <Button type="submit">Submit</Button>
         </FieldWrap>
