@@ -22,7 +22,7 @@ jobs:
           npm config set "@deque:registry" "https://agora.dequecloud.com/artifactory/api/npm/dequelabs/"
           npm config set "//agora.dequecloud.com/artifactory/api/npm/dequelabs/:_auth" "${{ secrets.AGORA_AUTH_TOKEN }}"
           npm config set "//agora.dequecloud.com/artifactory/api/npm/dequelabs/:email" "${{ secrets.AGORA_AUTH_EMAIL }}"
-      - run: npm install
+      - run: npm install --verbose
       - run: npm run build --verbose
       - name: Run tests
         uses: GabrielBB/xvfb-action@v1
