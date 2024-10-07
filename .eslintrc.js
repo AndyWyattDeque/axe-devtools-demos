@@ -4,6 +4,14 @@ module.exports = {
     es2021: true,
     mocha: true,
   },
+  overrides: [
+    {
+      files: ['test/**', '*.config.js'],
+      env: {
+        node: true
+      }
+    }
+  ],
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:cypress/recommended'],
   parserOptions: {
     ecmaFeatures: {
