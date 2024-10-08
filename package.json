@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require global-jsdom/register --require @babel/register --require ignore-styles 'src/**/*.test.{js,jsx}' --exit",
-    "build": "webpack",
+    "build": "webpack --mode development",
     "start": "webpack serve --mode development",
     "start-server": "serve build --single -p 3033",
     "lint": "eslint --fix --ext .js,.jsx .",
