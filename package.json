@@ -25,7 +25,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@axe-core/watcher": "^3.6.0",
-    "@axe-devtools/cypress": "^4.10.1",
+    "@axe-devtools/cypress": "^4.7.0",
     "@axe-devtools/reporter": "^4.6.0",
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
